@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1487923058628
+Build-Jdk: 1.8.0_111
+Built-By: ashish.g.agarwal
+Bundle-Description: Maven Multimodule project for My Learning AEM6 Proje
+ ct.
+Bundle-ManifestVersion: 2
+Bundle-Name: My Learning AEM6 Project Bundle
+Bundle-SymbolicName: org.mylearning.aem.my-learning-bundle
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.adobe.cq;uses:="org.apache.sling.api.resource";versi
+ on="1.0.0.SNAPSHOT",com.aem.sample.workflow;uses:="com.adobe.granite.wo
+ rkflow.exec,com.adobe.granite.workflow,com.adobe.granite.workflow.model
+ ,org.apache.sling.api.resource";version="1.0.0.SNAPSHOT",com.mysample.a
+ utotag.listeners;uses:="org.osgi.service.component,org.apache.sling.jcr
+ .api,org.slf4j,javax.jcr.observation,javax.jcr,org.osgi.framework,org.a
+ pache.sling.api.resource,com.day.cq.tagging,javax.jcr.nodetype";version
+ ="1.0.0.SNAPSHOT",org.mylearning.aem.herohtl;uses:="com.adobe.cq.sightl
+ y,org.apache.sling.api.resource,javax.jcr";version="1.0.0.SNAPSHOT",org
+ .mylearning.aem;version="1.0.0.SNAPSHOT",org.mylearning.aem.workflow;us
+ es:="com.adobe.granite.workflow.exec,com.adobe.granite.workflow.metadat
+ a,com.adobe.granite.workflow,org.slf4j,org.apache.sling.api.resource";v
+ ersion="1.0.0.SNAPSHOT"
+Import-Package: com.adobe.cq,com.adobe.cq.sightly;version="[2.2,3)",com.
+ adobe.granite.workflow;version="[1.0,2)",com.adobe.granite.workflow.exe
+ c;version="[1.0,2)",com.adobe.granite.workflow.metadata;version="[1.0,2
+ )",com.adobe.granite.workflow.model;version="[1.0,2)",com.day.cq.taggin
+ g;version="[5.7,6)",javax.jcr;version="[2.0,3)",javax.jcr.nodetype;vers
+ ion="[2.0,3)",javax.jcr.observation;version="[2.0,3)",org.apache.sling.
+ api.resource;version="[2.5,3)",org.apache.sling.commons.osgi;version="[
+ 2.2,3)",org.apache.sling.jcr.api;version="[2.2,3)",org.osgi.framework;v
+ ersion="[1.5,2)",org.osgi.service.component;version="[1.1,2)",org.slf4j
+ ;version="[1.5,2)"
+Service-Component: OSGI-INF/serviceComponents.xml
+Tool: Bnd-1.50.0

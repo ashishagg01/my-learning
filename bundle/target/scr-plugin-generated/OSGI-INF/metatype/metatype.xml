@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.0.0" localization="OSGI-INF/metatype/metatype">
+    <OCD id="com.adobe.cq.impl.SampleServiceImpl" name="Sample Service Impl" description="Sample Description">
+        <AD id="prop.enabled" type="Boolean" default="false" name="Service Enable/Disable" description="Enables/Disables the service without nullifying service reference objects. This enable/disabling must be implemented in all public methods of this service."/>
+    </OCD>
+    <OCD id="com.mysample.autotag.listeners.SimpleDSComponent" name="%com.mysample.autotag.listeners.SimpleDSComponent.name" description="%com.mysample.autotag.listeners.SimpleDSComponent.description"/>
+    <Designate pid="com.adobe.cq.impl.SampleServiceImpl">
+        <Object ocdref="com.adobe.cq.impl.SampleServiceImpl"/>
+    </Designate>
+    <Designate pid="com.mysample.autotag.listeners.SimpleDSComponent">
+        <Object ocdref="com.mysample.autotag.listeners.SimpleDSComponent"/>
+    </Designate>
+</metatype:MetaData>

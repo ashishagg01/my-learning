@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>My Learning AEM6 Project Package</comment>
+<entry key="createdBy">ashish.g.agarwal</entry>
+<entry key="name">my-learning-content</entry>
+<entry key="created">2017-01-13T17:47:50.705+0530</entry>
+<entry key="groupId">org.mylearning.aem</entry>
+<entry key="version">1.0-SNAPSHOT</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">My Learning</entry>
+<entry key="description">Maven Multimodule project for My Learning AEM6 Project.</entry>
+<entry key="artifactId">my-learning-content</entry>
+<entry key="path">/etc/packages/My Learning/my-learning-content.zip</entry>
+</properties>

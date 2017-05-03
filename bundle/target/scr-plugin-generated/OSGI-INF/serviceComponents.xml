@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><components xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0">
+    <scr:component enabled="true" name="com.adobe.cq.impl.KeyServiceImpl">
+        <implementation class="com.adobe.cq.impl.KeyServiceImpl"/>
+        <service servicefactory="false">
+            <provide interface="com.adobe.cq.KeyService"/>
+        </service>
+        <property name="service.pid" value="com.adobe.cq.impl.KeyServiceImpl"/>
+    </scr:component>
+    <scr:component enabled="true" immediate="false" name="com.adobe.cq.impl.SampleServiceImpl" activate="activate" deactivate="deactivate">
+        <implementation class="com.adobe.cq.impl.SampleServiceImpl"/>
+        <service servicefactory="false">
+            <provide interface="com.adobe.cq.SampleService"/>
+        </service>
+        <property name="service.vendor" type="String" value="SampleVendor"/>
+        <property name="prop.enabled" type="Boolean" value="false"/>
+        <property name="service.pid" value="com.adobe.cq.impl.SampleServiceImpl"/>
+        <reference name="resourceResolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" cardinality="1..1" policy="static" bind="bindResourceResolverFactory" unbind="unbindResourceResolverFactory"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.aem.sample.workflow.InvokeAEMWorkflowImp">
+        <implementation class="com.aem.sample.workflow.InvokeAEMWorkflowImp"/>
+        <service servicefactory="false">
+            <provide interface="com.aem.sample.workflow.InvokeAEMWorkflow"/>
+        </service>
+        <property name="service.pid" value="com.aem.sample.workflow.InvokeAEMWorkflowImp"/>
+        <reference name="resolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" cardinality="1..1" policy="static" bind="bindResolverFactory" unbind="unbindResolverFactory"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.mysample.autotag.listeners.ExampleObservation" activate="activate" deactivate="deactivate">
+        <implementation class="com.mysample.autotag.listeners.ExampleObservation"/>
+        <property name="service.pid" value="com.mysample.autotag.listeners.ExampleObservation"/>
+        <reference name="repository" interface="org.apache.sling.jcr.api.SlingRepository" cardinality="1..1" policy="static" bind="bindRepository" unbind="unbindRepository"/>
+    </scr:component>
+    <scr:component enabled="true" immediate="true" name="com.mysample.autotag.listeners.SimpleAddNodeListener">
+        <implementation class="com.mysample.autotag.listeners.SimpleAddNodeListener"/>
+        <service servicefactory="false">
+            <provide interface="javax.jcr.observation.EventListener"/>
+        </service>
+        <property name="service.pid" value="com.mysample.autotag.listeners.SimpleAddNodeListener"/>
+        <reference name="repository" interface="org.apache.sling.jcr.api.SlingRepository" cardinality="1..1" policy="static" bind="bindRepository" unbind="unbindRepository"/>
+        <reference name="resolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" cardinality="1..1" policy="static" bind="bindResolverFactory" unbind="unbindResolverFactory"/>
+    </scr:component>
+    <scr:component enabled="true" name="com.mysample.autotag.listeners.SimpleDSComponent">
+        <implementation class="com.mysample.autotag.listeners.SimpleDSComponent"/>
+        <service servicefactory="false">
+            <provide interface="java.lang.Runnable"/>
+            <provide interface="javax.jcr.observation.EventListener"/>
+        </service>
+        <property name="service.pid" value="com.mysample.autotag.listeners.SimpleDSComponent"/>
+        <reference name="resolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" cardinality="1..1" policy="static" bind="bindResolverFactory" unbind="unbindResolverFactory"/>
+        <reference name="tmf" interface="com.day.cq.tagging.JcrTagManagerFactory" cardinality="1..1" policy="static" bind="bindTmf" unbind="unbindTmf"/>
+        <reference name="repository" interface="org.apache.sling.jcr.api.SlingRepository" cardinality="1..1" policy="static" bind="bindRepository" unbind="unbindRepository"/>
+    </scr:component>
+    <scr:component enabled="true" name="org.mylearning.aem.workflow.MyDynamicParticipant">
+        <implementation class="org.mylearning.aem.workflow.MyDynamicParticipant"/>
+        <service servicefactory="false">
+            <provide interface="com.adobe.granite.workflow.exec.ParticipantStepChooser"/>
+        </service>
+        <property name="service.description" type="String" value="A sample implementation of a dynamic participant chooser."/>
+        <property name="service.vendor" type="String" value="SampleVendor"/>
+        <property name="chooser.label" type="String" value="Sample Participant Chooser"/>
+        <property name="service.pid" value="org.mylearning.aem.workflow.MyDynamicParticipant"/>
+    </scr:component>
+    <scr:component enabled="true" immediate="false" name="org.mylearning.aem.workflow.SampleProcessWorkflow">
+        <implementation class="org.mylearning.aem.workflow.SampleProcessWorkflow"/>
+        <service servicefactory="false">
+            <provide interface="com.adobe.granite.workflow.exec.WorkflowProcess"/>
+        </service>
+        <property name="service.description" type="String" value="CQ Workflow Process implementation."/>
+        <property name="process.label" type="String" value="CQ Workflow Process"/>
+        <property name="service.pid" value="org.mylearning.aem.workflow.SampleProcessWorkflow"/>
+        <reference name="resourceResolverFactory" interface="org.apache.sling.api.resource.ResourceResolverFactory" cardinality="1..1" policy="static" bind="bindResourceResolverFactory" unbind="unbindResourceResolverFactory"/>
+    </scr:component>
+</components>
